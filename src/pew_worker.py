@@ -58,20 +58,25 @@ class PewWorker:
         return self.melted_df
 
     def summary(self) -> pd.DataFrame:
-        """Summarize counts by income category."""
+        """Count valid responses for each income variable."""
         if self.melted_df is None:
             raise ValueError(
                 "Call melt_income() before summary()."
             )
 
-        result = self.melted_df.copy()
-        result["count"] = pd.to_numeric(
-            result["count"],
-            errors="coerce"
+        # Convert whitespace-only responses to missing values
+        result = self.melted_df[["income", "count"]].copy()
+        result["count"] = (
+            result["count"]
+            .astype("string")
+            .str.strip()
+            .replace("", pd.NA)
         )
 
+        # Count nonblank responses for each income variable
         return (
             result.groupby("income", as_index=False)["count"]
-            .sum(min_count=1)
+            .count()
+            .rename(columns={"count": "response_count"})
             .sort_values("income")
         )
