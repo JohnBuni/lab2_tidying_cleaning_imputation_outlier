@@ -25,3 +25,20 @@ CREATE TABLE cars_clean (          -- written by CarsWorker.save_clean()
     horsepower double precision, weight double precision, acceleration double precision,
     model integer, origin text, source text
 );
+
+-- Section 4 - Outlier Detection (Diabetes Dataset)
+CREATE TABLE diabetes_raw (        -- data/diabetes.csv (Pima, 768 women) as supplied
+    row_num integer PRIMARY KEY,
+    pregnancies integer, glucose integer, bloodpressure integer, skinthickness integer,
+    insulin integer, bmi double precision, diabetespedigreefunction double precision,
+    age integer, outcome integer
+);
+CREATE TABLE diabetes_public_nhanes (  -- 1,000 women aged 21+ from NHANES 2009-2012 (US CDC)
+    id integer PRIMARY KEY, surveyyr text, gender text, age integer, race1 text,
+    bmi double precision, bpdiaave double precision, npregnancies double precision, diabetes text
+);
+CREATE TABLE diabetes_clean (      -- written by DiabetesWorker.save_clean()
+    pregnancies double precision, glucose double precision, bloodpressure double precision,
+    skinthickness double precision, insulin double precision, bmi double precision,
+    diabetespedigreefunction double precision, age double precision, outcome integer, source text
+);
