@@ -13,6 +13,7 @@ Data preprocessing on four datasets in one notebook, `week5Lab.ipynb`:
 
 - Python 3.12
 - Access to the team's Neon PostgreSQL database (Sections 3 and 4)
+- Database configuration provided to authorized team members by email, under the subject "PROG8245: Week 5 Lab – Team Contributions and Approach"
 
 ## How to Run
 
@@ -22,6 +23,7 @@ cd lab2_tidying_cleaning_imputation_outlier
 
 python -m venv .venv
 .venv\Scripts\activate          # Windows
+# .\.venv\Scripts\Activate.ps1     # Windows PowerShell (VS Code)
 # source .venv/bin/activate     # macOS / Linux
 
 pip install -r requirements.txt
@@ -38,8 +40,8 @@ week5Lab.ipynb      Notebook (Sections 1–4)
 src/                One worker class per dataset, plus shared database helpers
 data/               Source datasets and Pew documentation
 sql/schema.sql      Neon database tables
-docs/               Project details
+PROJECT_DETAILS.md               Project details
 requirements.txt    Pinned dependencies
 ```
 
-More detail on the datasets, database, worker classes and design decisions: [docs/PROJECT_DETAILS.md](docs/PROJECT_DETAILS.md).
+More detail on the datasets, database, worker classes and design decisions: [PROJECT_DETAILS.md](PROJECT_DETAILS.md).
