@@ -23,7 +23,7 @@ cd lab2_tidying_cleaning_imputation_outlier
 
 python -m venv .venv
 .venv\Scripts\activate          # Windows
-# .\.venv\Scripts\Activate.ps1     # Windows PowerShell (VS Code)
+# .\.venv\Scripts\Activate.ps1  # Windows PowerShell (VS Code)
 # source .venv/bin/activate     # macOS / Linux
 
 pip install -r requirements.txt
