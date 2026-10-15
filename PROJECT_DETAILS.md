@@ -97,7 +97,38 @@ Sections 1 and 2 read their CSV files directly.
 | 3 | Group median for `MPG`, regression for `Weight` and `Horsepower` | Uses related columns instead of stacking one value on ~950 EPA rows |
 | 4 | Remove only diastolic pressure below 38 mm Hg | Physiologically implausible; high values and extreme BMI are real and kept |
 
-## 6. Replicability
+## 6. Team and Workflow
+
+Each member did a different job in each section, so everyone worked on all four datasets.
+
+| Section | Class | Notebook | Markdown | Testing |
+|---|---|---|---|---|
+| 1 – PEW | John | Eche | Sultan | Antonio |
+| 2 – Billboard | Eche | Antonio | John | Sultan |
+| 3 – Cars | Antonio | Sultan | Eche | John |
+| 4 – Diabetes | Sultan | John | Antonio | Eche |
+
+| Role | Responsibility |
+|---|---|
+| Class | Write the dataset's worker class in `src/`, one method per step, with docstrings |
+| Notebook | Call the class methods in the notebook (one call per cell) and complete the exercises |
+| Markdown | Rewrite the section's explanations: goal, reasoning behind each step, key takeaways |
+| Testing | Review the section's pull requests and run it from a fresh clone and virtual environment |
+
+| Shared task | Owner |
+|---|---|
+| Repository setup and `.gitignore` | Sultan |
+| `requirements.txt` | John |
+| Replicability Check | Eche |
+| Public repository and submission PDF | Antonio |
+
+**Process**
+1. All four classes were written in parallel, each on its own branch (`pew-class`, `billboard-class`, `cars-class`, `diabetes-class`).
+2. Each class was merged through a pull request reviewed by that section's tester.
+3. The notebook and markdown work was done one section at a time, so only one person edited the notebook at any moment.
+4. After `requirements.txt` was added, each tester ran their section on their own laptop and sent their OS, Python version and any issues to the Replicability Check.
+
+## 7. Replicability
 
 - Dependencies were frozen with `pip freeze > requirements.txt` in the project virtual environment.
 - The notebook was run end to end on a second machine in a new virtual environment created only from `requirements.txt`.

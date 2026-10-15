@@ -11,14 +11,14 @@ Data preprocessing on four datasets in one notebook, `week5Lab.ipynb`:
 
 ## Requirements
 
-- Python >= 3.12
+- Python 3.12
 - Access to the team's Neon PostgreSQL database (Sections 3 and 4)
 
 ## How to Run
 
 ```bash
-git clone <repository-url>
-cd <repository-folder>
+git clone https://github.com/JohnBuni/lab2_tidying_cleaning_imputation_outlier.git
+cd lab2_tidying_cleaning_imputation_outlier
 
 python -m venv .venv
 .venv\Scripts\activate          # Windows
